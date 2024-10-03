@@ -1,7 +1,16 @@
 import { useEffect } from 'react';
 import GoogleCalendar from './Components/GoogleCalendar';
-import augreduvantlogo2 from './Assets/augreduvantlogo2.png';
+import Augreduvent from './Assets/Augreduvent.png';
 import './App.css';
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
 
 function App() {
   useEffect(() => {
@@ -27,6 +36,20 @@ function App() {
 
       document.body.appendChild(script);
     };
+    const firebaseConfig = {
+      apiKey: "AIzaSyCeDS_HWovLEePRsSMJAg2vSMtzTevl1HY",
+      authDomain: "attendance-bed1c.firebaseapp.com",
+      projectId: "attendance-bed1c",
+      storageBucket: "attendance-bed1c.appspot.com",
+      messagingSenderId: "255409375523",
+      appId: "1:255409375523:web:06dbdad22b352a1cb96496",
+      measurementId: "G-Z6PJBGRX8Z"
+    };
+    
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    
 
     // Initialize the Google API client
     const initClient = () => {
@@ -47,7 +70,7 @@ function App() {
   return (
     <div>
       <h1>Attendance Tracker</h1>
-      <img src={augreduvantlogo2} alt="logo" style={{ width: '50%', height: 'auto' }} /> {/* Image rendered here */}
+      <img src={Augreduvent} alt="logo" style={{ width: '50%', height: 'auto' }} /> {/* Image rendered here */}
       <p> </p>
       <GoogleCalendar />
     </div>
