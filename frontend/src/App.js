@@ -72,6 +72,7 @@ function App() {
       <h1>Attendance Tracker</h1>
       <img src={Augreduvent} alt="logo" style={{ width: '50%', height: 'auto' }} /> {/* Image rendered here */}
       <p> </p>
+      <HomePage.js></HomePage.js>
       <GoogleCalendar />
     </div>
   );
